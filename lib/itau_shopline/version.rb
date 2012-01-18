@@ -1,3 +1,3 @@
-module ItauShopline
-  VERSION = "0.0.2"
+class ItauShopline
+  VERSION = "0.0.3"
 end
