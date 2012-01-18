@@ -1,10 +1,10 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "itau_cripto/version"
+require "itau_shopline/version"
 
 Gem::Specification.new do |s|
   s.name        = "itau_shopline"
-  s.version     = ItauCripto::VERSION
+  s.version     = ItauShopline::VERSION
   s.authors     = ["Bruno Frank Cordeiro"]
   s.email       = ["bfscordeiro@gmail.com"]
   s.homepage    = ""
