@@ -56,8 +56,8 @@ class ItauCripto
       
     return "Erro: código de inscrição inválido." if param_string7 != "02" && param_string7 != "01" && param_string7 != ""
     return "Erro: número de inscrição inválido." if param_string8 != "" && !is_numeric(param_string8) && param_string8.size > 14
-    return "Erro: cep inválido." if param_string11 != "" && !is_numeric(param_string11) || param_string11.size != 8
-    return "Erro: data de vencimento inválida." if param_string14 != "" && !is_numeric(param_string14) || param_string14.size != 8
+    return "Erro: cep inválido." if param_string11 != "" && ( !is_numeric(param_string11) || param_string11.size != 8 )
+    return "Erro: data de vencimento inválida." if param_string14 != "" && ( !is_numeric(param_string14) || param_string14.size != 8 )
     return "Erro: observação adicional 1 inválida." if param_string16.size > 60
     return "Erro: observação adicional 2 inválida." if param_string17.size > 60
     return "Erro: observação adicional 3 inválida." if param_string18.size > 60
