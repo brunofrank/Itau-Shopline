@@ -56,10 +56,10 @@ class ItauShopline
     '03' => :credit_card
   }
   
-  def gera_dados(invoice_id, total_price, full_name, address1, address2, zipcode, city_name, state_uf, cod_inscricao, num_inscricao, due_date=nil, return_url="")
+  def gera_dados(invoice_id, total_price, full_name, address1, address2, zipcode, city_name, state_uf, cod_inscricao, num_inscricao, id_pedido, due_date=nil, return_url="")
     cripto = ItauCripto.new
     due_date ||= (Date.today + 3.days).strftime('%d%m%Y')
-    cripto.gera_dados(config['codigo_empresa'], invoice_id.to_s, number_to_currency(total_price, :unit => "", :separator => ",", :delimiter => ""), "",  config['chave'], full_name, cod_inscricao, num_inscricao, address1, address2, zipcode, city_name[0,15], state_uf[0,2], due_date, return_url[0,60], '', '', '')
+    cripto.gera_dados(config['codigo_empresa'], invoice_id.to_s, number_to_currency(total_price, :unit => "", :separator => ",", :delimiter => ""), "",  config['chave'], full_name, cod_inscricao, num_inscricao, address1, address2, zipcode, city_name[0,15], state_uf[0,2], due_date, return_url[0,60], "3 - Número do pedido: #{id_pedido}", '', '')
   end
 
   def dcript_transaction_notify(dados)
